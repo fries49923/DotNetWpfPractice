@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfFilterListBoxTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFilterListBoxTest"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="450"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBox Grid.Row="0"
+                 VerticalContentAlignment="Center"
+                 FontSize="18"
+                 Text="{Binding Path=FilterText, UpdateSourceTrigger=PropertyChanged}">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="TextChanged">
+                    <i:InvokeCommandAction Command="{Binding Path=SearchTextCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </TextBox>
+
+        <ListBox Grid.Row="1"
+                 FontSize="18"
+                 ItemsSource="{Binding Path=TestStrings}"/>
+
+    </Grid>
+
+</Window>
