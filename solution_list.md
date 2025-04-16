@@ -1,5 +1,13 @@
 # [.net WPF Tested Code]
 
+## [WpfAttachedPropAndCtTest](./WpfAttachedPropAndCtTest)
+
+#AttachedProperty #附加屬性 #ControlTemplate
+
+示範在ControlTemplate中使用附加屬性，達成不透過繼承也能彈性控制樣式的內容設定，亦即將 ControlTemplate 內部元件的屬性設定分離，讓樣式更加模組化與可重用。
+
+<br>
+
 ## [WpfFilterListBoxTest](./WpfFilterListBoxTest)
 
 #ListBox #CollectionView #Filter
