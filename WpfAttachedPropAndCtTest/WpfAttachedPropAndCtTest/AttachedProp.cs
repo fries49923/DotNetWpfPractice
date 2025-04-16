@@ -5,6 +5,7 @@ namespace WpfAttachedPropAndCtTest
 {
     public static class AttachedProp
     {
+        // IconFill
         public static readonly DependencyProperty IconFillProperty =
             DependencyProperty.RegisterAttached(
                 "IconFill",
@@ -20,6 +21,24 @@ namespace WpfAttachedPropAndCtTest
         public static Brush GetIconFill(UIElement element)
         {
             return (Brush)element.GetValue(IconFillProperty);
+        }
+
+        // ShowIcon
+        public static readonly DependencyProperty ShowIconProperty =
+            DependencyProperty.RegisterAttached(
+                "ShowIcon",
+                typeof(bool),
+                typeof(AttachedProp),
+                new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.Inherits));
+
+        public static void SetShowIcon(DependencyObject element, bool value)
+        {
+            element.SetValue(ShowIconProperty, value);
+        }
+
+        public static bool GetShowIcon(DependencyObject element)
+        {
+            return (bool)element.GetValue(ShowIconProperty);
         }
     }
 }

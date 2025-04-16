@@ -17,8 +17,8 @@
             <Setter Property="Margin" Value="0,5"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Width" Value="200"/>
-            <Setter Property="Height" Value="30"/>
-            <Setter Property="Background" Value="Yellow"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Background" Value="LightSkyBlue"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="FontWeight" Value="Bold"/>
 
@@ -28,7 +28,9 @@
 
                     <ControlTemplate TargetType="Button">
 
-                        <Border Background="{TemplateBinding Background}">
+                        <Border Background="{TemplateBinding Background}"
+                                BorderBrush="DarkSlateGray"
+                                BorderThickness="2">
 
                             <Grid VerticalAlignment="Center">
 
@@ -37,10 +39,12 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
 
-                                <md:PackIcon Margin="10,0"
-                                             Width="20"
-                                             Height="20"
+                                <md:PackIcon x:Name="mdIcon"
+                                             Margin="10,0"
+                                             Width="24"
+                                             Height="24"
                                              Kind="Fries"
+                                             Visibility="Visible"
                                              Foreground="{Binding Path=(local:AttachedProp.IconFill),
                                                                   RelativeSource={RelativeSource TemplatedParent}}"/>
 
@@ -51,6 +55,17 @@
                             </Grid>
 
                         </Border>
+
+                        <ControlTemplate.Triggers>
+
+                            <!-- Also can use converter -->
+                            <Trigger Property="local:AttachedProp.ShowIcon" Value="False">
+                                <Setter TargetName="mdIcon"
+                                        Property="Visibility"
+                                        Value="Collapsed"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
 
                     </ControlTemplate>
                 </Setter.Value>
@@ -64,15 +79,42 @@
         <StackPanel Margin="20">
 
             <Button Style="{StaticResource TestButtonStyle}"
-                    Foreground="Chocolate"
-                    local:AttachedProp.IconFill="Blue"
+                    Foreground="DarkSlateBlue"
+                    local:AttachedProp.IconFill="MediumPurple"
                     Content="Button 1"/>
 
             <Button Style="{StaticResource TestButtonStyle}"
-                    Background="AliceBlue"
-                    Foreground="Red"
-                    local:AttachedProp.IconFill="HotPink"
-                    Content="Button 1"/>
+                    Background="MediumSeaGreen"
+                    Foreground="White"
+                    local:AttachedProp.IconFill="Goldenrod"
+                    Content="Button 2"/>
+
+            <Button Style="{StaticResource TestButtonStyle}"
+                    local:AttachedProp.ShowIcon ="False"
+                    Content="Button 3"/>
+
+            <Button Content="Button 4">
+                
+                <Button.Style>
+                    <Style TargetType="Button"
+                           BasedOn="{StaticResource TestButtonStyle}">
+                        <Setter Property="local:AttachedProp.IconFill" Value="FireBrick"/>
+                        <Setter Property="Background" Value="LightCoral"/>
+                        <Setter Property="Foreground" Value="White"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="local:AttachedProp.IconFill"
+                                        Value="DarkOrange"/>
+                                <Setter Property="Foreground" Value="WhiteSmoke"/>
+                                <Setter Property="Background" Value="IndianRed"/>
+                            </Trigger>
+                        </Style.Triggers>
+                        
+                    </Style>
+                </Button.Style>
+                
+            </Button>
 
         </StackPanel>
 
