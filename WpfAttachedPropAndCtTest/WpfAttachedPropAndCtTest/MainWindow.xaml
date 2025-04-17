@@ -45,8 +45,11 @@
                                              Height="24"
                                              Kind="Fries"
                                              Visibility="Visible"
-                                             Foreground="{Binding Path=(local:AttachedProp.IconFill),
-                                                                  RelativeSource={RelativeSource TemplatedParent}}"/>
+                                             Foreground="{TemplateBinding local:IconAssist.IconFill}"/>
+
+                                <!-- Also can use binding -->
+                                <!--Foreground="{Binding Path=(local:IconAssist.IconFill),
+                                                                  RelativeSource={RelativeSource TemplatedParent}}"-->
 
                                 <ContentPresenter Grid.Column="1"
                                                   HorizontalAlignment="Center"
@@ -59,7 +62,7 @@
                         <ControlTemplate.Triggers>
 
                             <!-- Also can use converter -->
-                            <Trigger Property="local:AttachedProp.ShowIcon" Value="False">
+                            <Trigger Property="local:IconAssist.ShowIcon" Value="False">
                                 <Setter TargetName="mdIcon"
                                         Property="Visibility"
                                         Value="Collapsed"/>
@@ -80,40 +83,40 @@
 
             <Button Style="{StaticResource TestButtonStyle}"
                     Foreground="DarkSlateBlue"
-                    local:AttachedProp.IconFill="MediumPurple"
+                    local:IconAssist.IconFill="MediumPurple"
                     Content="Button 1"/>
 
             <Button Style="{StaticResource TestButtonStyle}"
                     Background="MediumSeaGreen"
                     Foreground="White"
-                    local:AttachedProp.IconFill="Goldenrod"
+                    local:IconAssist.IconFill="Goldenrod"
                     Content="Button 2"/>
 
             <Button Style="{StaticResource TestButtonStyle}"
-                    local:AttachedProp.ShowIcon ="False"
+                    local:IconAssist.ShowIcon ="False"
                     Content="Button 3"/>
 
             <Button Content="Button 4">
-                
+
                 <Button.Style>
                     <Style TargetType="Button"
                            BasedOn="{StaticResource TestButtonStyle}">
-                        <Setter Property="local:AttachedProp.IconFill" Value="FireBrick"/>
+                        <Setter Property="local:IconAssist.IconFill" Value="FireBrick"/>
                         <Setter Property="Background" Value="LightCoral"/>
                         <Setter Property="Foreground" Value="White"/>
 
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="local:AttachedProp.IconFill"
+                                <Setter Property="local:IconAssist.IconFill"
                                         Value="DarkOrange"/>
                                 <Setter Property="Foreground" Value="WhiteSmoke"/>
                                 <Setter Property="Background" Value="IndianRed"/>
                             </Trigger>
                         </Style.Triggers>
-                        
+
                     </Style>
                 </Button.Style>
-                
+
             </Button>
 
         </StackPanel>
