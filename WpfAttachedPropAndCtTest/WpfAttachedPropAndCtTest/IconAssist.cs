@@ -3,14 +3,14 @@ using System.Windows.Media;
 
 namespace WpfAttachedPropAndCtTest
 {
-    public static class AttachedProp
+    public static class IconAssist
     {
         // IconFill
         public static readonly DependencyProperty IconFillProperty =
             DependencyProperty.RegisterAttached(
                 "IconFill",
                 typeof(Brush),
-                typeof(AttachedProp),
+                typeof(IconAssist),
                 new FrameworkPropertyMetadata(Brushes.Black, FrameworkPropertyMetadataOptions.Inherits));
 
         public static void SetIconFill(UIElement element, Brush value)
@@ -28,7 +28,7 @@ namespace WpfAttachedPropAndCtTest
             DependencyProperty.RegisterAttached(
                 "ShowIcon",
                 typeof(bool),
-                typeof(AttachedProp),
+                typeof(IconAssist),
                 new FrameworkPropertyMetadata(true, FrameworkPropertyMetadataOptions.Inherits));
 
         public static void SetShowIcon(DependencyObject element, bool value)
