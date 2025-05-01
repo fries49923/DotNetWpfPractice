@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="WpfListBoxDataTemplateDataTypeTest.BoatUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfListBoxDataTemplateDataTypeTest"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d"
+             d:DesignWidth="345"
+             d:DesignHeight="70">
+
+    <Grid Background="#B5DAFD">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <md:PackIcon Grid.Column="0"
+                     Width="30"
+                     Height="30"
+                     HorizontalAlignment="Center"
+                     VerticalAlignment="Center"
+                     Kind="Boat"/>
+
+        <StackPanel Grid.Column="1"
+                    Margin="10,0"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center">
+
+            <TextBlock>
+                <Run Text="Name:"/>
+                <LineBreak/>
+                <Run Text="  "/>
+                <Run Text="{Binding Path=Name}"/>
+            </TextBlock>
+
+            <TextBlock Margin="20,0">
+                <Run Text="EnginePower:"/>
+                <LineBreak/>
+                <Run Text="  "/>
+                <Run Text="{Binding Path=EnginePower}"/>
+            </TextBlock>
+
+            <TextBlock>
+                <Run Text="Length:"/>
+                <LineBreak/>
+                <Run Text="  "/>
+                <Run Text="{Binding Path=Length}"/>
+            </TextBlock>
+
+        </StackPanel>
+
+    </Grid>
+
+</UserControl>
