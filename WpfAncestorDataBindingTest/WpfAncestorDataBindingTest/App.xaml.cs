@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace WpfAncestorDataBinding
+namespace WpfAncestorDataBindingTest
 {
     /// <summary>
     /// Interaction logic for App.xaml

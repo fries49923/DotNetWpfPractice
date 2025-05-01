@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace WpfAncestorDataBinding.Model
+namespace WpfAncestorDataBindingTest.Model
 {
     public partial class PersonData : ObservableObject
     {

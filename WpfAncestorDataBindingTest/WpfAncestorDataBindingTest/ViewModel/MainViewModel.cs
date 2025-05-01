@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System.Collections.ObjectModel;
-using WpfAncestorDataBinding.Model;
+using WpfAncestorDataBindingTest.Model;
 
-namespace WpfAncestorDataBinding.ViewModel
+namespace WpfAncestorDataBindingTest.ViewModel
 {
     public partial class MainViewModel : ObservableObject
     {
