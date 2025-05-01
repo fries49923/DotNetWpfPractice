@@ -1,0 +1,3 @@
+#Ancestor #DataBinding
+
+MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding會找最近的DataContext，如果參雜需要較遠的話，則需要使用RelativeSource搭配Ancestor，告訴XAML另外的條件尋找Binding的目標

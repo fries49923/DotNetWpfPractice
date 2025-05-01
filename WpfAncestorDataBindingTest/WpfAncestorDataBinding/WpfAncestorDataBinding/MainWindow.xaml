@@ -1,0 +1,85 @@
+﻿<Window x:Class="WpfAncestorDataBinding.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAncestorDataBinding"
+        xmlns:vm="clr-namespace:WpfAncestorDataBinding.ViewModel"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="400"
+        Width="400"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <BooleanToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+
+        <StackPanel Margin="20">
+
+            <ComboBox x:Name="cbData"
+                      Margin="0,0,0,5"
+                      DisplayMemberPath="Name"
+                      ItemsSource="{Binding Path=Persons}"
+                      SelectedIndex="0"/>
+
+            <CheckBox Margin="0,0,0,5"
+                      Content="Show Detail"
+                      IsChecked="{Binding Path=IsShowDetail}"/>
+
+            <Border BorderThickness="2"
+                    BorderBrush="BlueViolet"
+                    CornerRadius="5">
+
+                <!--讓StackPanel 去Binding ComboBox中的SelectedItem-->
+                <StackPanel Margin="10"
+                            DataContext="{Binding ElementName=cbData, Path=SelectedItem}">
+
+                    <!--下面Binding正常狀況下-->
+                    <!--只會在StackPanel找 要Binding的變數-->
+
+                    <!--Name-->
+                    <TextBlock Text="Name:"/>
+                    <TextBox Text="{Binding Path=Name}"/>
+
+                    <!--Phone-->
+                    <TextBlock Margin="0,10,0,0"
+                               Text="Phone:"/>
+                    <TextBox Text="{Binding Path=Phone}"/>
+
+                    <!--Email-->
+                    <TextBlock Margin="0,10,0,0"
+                               Text="Email:"/>
+                    <TextBox Text="{Binding Path=Email}"/>
+
+                    <!--Address-->
+                    <TextBlock Margin="0,10,0,0"
+                               Text="Address:"
+                               Visibility="{Binding Path=IsShowDetail, Converter={StaticResource BoolToVisibilityConverter}}"/>
+
+                    <!--但是如果有需求，需要Binding其他地方的變數會有問題，像上面↑這邊，就找不到變數-->
+                    <!--這時候需要設定RelativeSource，並設定祖先目標↓；若有好幾層容器的DataContext，也可以指定要在哪層去找-->
+
+                    <TextBox Text="{Binding Path=Address}"
+                             Visibility="{Binding Path=DataContext.IsShowDetail,
+                               RelativeSource={RelativeSource AncestorType=Window},
+                               Converter={StaticResource BoolToVisibilityConverter}}" />
+
+                </StackPanel>
+
+            </Border>
+
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>
