@@ -1,0 +1,3 @@
+#Storyboard #Anime #UserControl #DependencyProperty
+
+建立一個具有動畫的UserControl，並且加入DependencyProperty讓外部元件可以在XAML Binding參數，來控制動畫的撥放與停止
