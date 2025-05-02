@@ -1,0 +1,109 @@
+﻿<Window x:Class="WpfDictionaryBindingTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfDictionaryBindingTest"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   Text="Test1"/>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="1"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   Text="Test2"/>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="2"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   FontSize="20"
+                   Text="Test3"/>
+
+        <ListBox x:Name="lbTest1"
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 ItemsSource="{Binding Path=Methods}">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding Path=SelectChangeCommand}"
+                                           CommandParameter="{Binding ElementName=lbTest1, Path=SelectedItem}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </ListBox>
+
+        <ListBox x:Name="lbTest2"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 DisplayMemberPath="Key"
+                 SelectedValuePath="Key"
+                 ItemsSource="{Binding Path=Methods}">
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding Path=SelectChangeCommand}"
+                                           CommandParameter="{Binding ElementName=lbTest2, Path=SelectedValue}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </ListBox>
+
+        <ListBox x:Name="lbTest3"
+                 Grid.Row="1"
+                 Grid.Column="2"
+                 ItemsSource="{Binding Path=Methods}">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Key: "/>
+                        <TextBlock Text="{Binding Path=Key}"/>
+                        <TextBlock Text=", Value: "/>
+                        <TextBlock Text="{Binding Path=Value.Name}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="SelectionChanged">
+                    <i:InvokeCommandAction Command="{Binding Path=SelectChangeCommand}"
+                                           CommandParameter="{Binding ElementName=lbTest3, Path=SelectedValue}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+
+        </ListBox>
+
+    </Grid>
+
+</Window>
