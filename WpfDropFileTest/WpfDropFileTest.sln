@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDropFileTest", "WpfDropFileTest\WpfDropFileTest.csproj", "{ECF2DE0D-6061-4154-8344-B2B8E7140EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECF2DE0D-6061-4154-8344-B2B8E7140EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF2DE0D-6061-4154-8344-B2B8E7140EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF2DE0D-6061-4154-8344-B2B8E7140EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF2DE0D-6061-4154-8344-B2B8E7140EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C547C966-4E16-4A6F-A971-29242C18B8D0}
+	EndGlobalSection
+EndGlobal

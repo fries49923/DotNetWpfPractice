@@ -1,0 +1,3 @@
+#Command Pattern #DictionaryBinding #Dictionary
+
+使用Command Pattern的Class放到Dictionary，並測試三種ListBox顯示方式，並且SelectionChanged時取得對應的Class
