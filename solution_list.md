@@ -24,6 +24,22 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 
 <br>
 
+## [WpfDictionaryBindingTest](./WpfDictionaryBindingTest)
+
+#Command Pattern #DictionaryBinding #Dictionary
+
+使用Command Pattern的Class放到Dictionary，並測試三種ListBox顯示方式，並且SelectionChanged時取得對應的Class
+
+<br>
+
+## [WpfDropFileTest](./WpfDropFileTest)
+
+#Behavior #Drop
+
+測試將 Behavior 用於 Drop 事件，透過將檔案拖曳到 UI 上來取得路徑字串或顯示圖片
+
+<br>
+
 ## [WpfFilterListBoxTest](./WpfFilterListBoxTest)
 
 #ListBox #CollectionView #Filter
@@ -32,11 +48,35 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 
 <br>
 
+## [WpfKeyBindingTest](./WpfKeyBindingTest)
+
+#KeyBinding #Hot Key #MVVM
+
+測試在MVVM架構下撰寫快捷鍵(HotKey)，按下指定組合時，去觸發綁定的ViewModel的Command
+
+<br>
+
 ## [WpfListBoxDataTemplateDataTypeTest](./WpfListBoxDataTemplateDataTypeTest)
 
 #ListBox #DataTemplate #DataType #Polymorphism
 
 示範利用 DataTemplate 的 DataType 讓 ListBox 依據資料的子類別(型態)自動套用不同模板，並分別示範了三種實作方式：內嵌 XAML、UserControl、Control
+
+<br>
+
+## [WpfListBoxSelectorTest](./WpfListBoxSelectorTest)
+
+#ListBox #StyleSelector #ItemTemplateSelector #ItemContainerStyleSelector #Style #DataTemplate
+
+測試繼承StyleSelector與DataTemplateSelector，並搭配ListBox的ItemTemplateSelector與ItemContainerStyleSelector，在item不同條件下使用不同的Style與DataTemplate
+
+<br>
+
+## [WpfMvvmEventTriggerTest](./WpfMvvmEventTriggerTest)
+
+#i:Interaction.Triggers #i:EventTrigger #MVVM 
+
+測試使用EventTrigger，讓路由事件經過此方式觸發ViewModel的Command
 
 <br>
 
