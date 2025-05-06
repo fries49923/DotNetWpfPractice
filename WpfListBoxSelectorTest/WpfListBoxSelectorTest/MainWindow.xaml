@@ -1,0 +1,61 @@
+﻿<Window x:Class="WpfListBoxSelectorTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfListBoxSelectorTest"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <DataTemplate x:Key="ShortItemTemplate">
+            <TextBlock Text="{Binding}" Foreground="Black"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="LongItemTemplate">
+            <TextBlock Text="{Binding}" Foreground="Red"/>
+        </DataTemplate>
+
+        <Style x:Key="OddItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+
+        <Style x:Key="EvenItemStyle" TargetType="ListBoxItem">
+            <Setter Property="Background" Value="LightGreen"/>
+        </Style>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+
+        <ListBox FontSize="20"
+                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.CanContentScroll="False"
+                 ItemsSource="{Binding Path=Items}">
+
+            <ListBox.ItemTemplateSelector>
+                <local:MyTemplateSelector
+                    LongItemTemplate="{StaticResource LongItemTemplate}"
+                    ShortItemTemplate="{StaticResource ShortItemTemplate}"/>
+            </ListBox.ItemTemplateSelector>
+
+            <ListBox.ItemContainerStyleSelector>
+                <local:MyStyleSelector
+                    EvenItemStyle="{StaticResource EvenItemStyle}"
+                    OddItemStyle="{StaticResource OddItemStyle}"/>
+            </ListBox.ItemContainerStyleSelector >
+
+        </ListBox>
+
+    </Grid>
+
+</Window>
