@@ -51,7 +51,7 @@ namespace WpfBehaviorWithCommandTest
         {
             var pos = e.GetPosition(AssociatedObject);
 
-            this.MouseAxisStr = $"x:{pos.X}, y:{pos.Y}";
+            MouseAxisStr = $"x:{pos.X}, y:{pos.Y}";
         }
 
         // MouseDown

@@ -1,0 +1,33 @@
+﻿<Window x:Class="WpfToolKitMvvmAndDiTest2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfToolKitMvvmAndDiTest2"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="400"
+        Width="400"
+        WindowStartupLocation="CenterScreen">
+
+    <StackPanel>
+
+        <TextBlock HorizontalAlignment="Center"
+                   Text="{Binding Path=Name}"/>
+
+        <Slider Margin="0,20,0,0"
+                Minimum="0"
+                Maximum="100"
+                Value="{Binding Path=Number}"/>
+
+        <TextBlock Margin="0,10,0,0"
+                   HorizontalAlignment="Center"
+                   Text="{Binding Path=Number}"/>
+
+        <Button Margin="0,20,0,0"
+                Content="Click me"
+                Command="{Binding Path=ClickCommand}"/>
+
+    </StackPanel>
+
+</Window>
