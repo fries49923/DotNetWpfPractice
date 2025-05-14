@@ -20,7 +20,7 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 
 #Behavior #Mouse event #Command
 
-示範使用Behavior，此範例在label內滑鼠移動時(MouseMove)顯示xy座標，滑鼠按鍵點擊時(MouseDown)觸發相關Command，此範例將此Command與ViewModel連結
+測試使用Behavior，此範例在label內滑鼠移動時(MouseMove)顯示xy座標，滑鼠按鍵點擊時(MouseDown)觸發相關Command，此範例將此Command與ViewModel連結
 
 <br>
 
@@ -56,6 +56,14 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 
 <br>
 
+## [WpfListBoxAlternationIndexTest](./WpfListBoxAlternationIndexTest)
+
+#ListBox #AlternationIndex #AlternationCount
+
+測試ListBox可以經過設定，來讓項目根據索引的值來使用不同的設定，例如背景顏色
+
+<br>
+
 ## [WpfListBoxDataTemplateDataTypeTest](./WpfListBoxDataTemplateDataTypeTest)
 
 #ListBox #DataTemplate #DataType #Polymorphism
@@ -77,6 +85,14 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 #i:Interaction.Triggers #i:EventTrigger #MVVM 
 
 測試使用EventTrigger，讓路由事件經過此方式觸發ViewModel的Command
+
+<br>
+
+## [WpfToolKitMvvmAndDiTest](./WpfToolKitMvvmAndDiTest)
+
+#CommunityToolkit.Mvvm #DI #Ioc #Microsoft.Extensions.DependencyInjection #MVVM #Nuget
+
+測試同時使用 ToolKit.Mvvm 與 DI 套件，其中 Mvvm 部分透過繼承 ObservableObject 與使用對應的 Attribute 來實作 ViewModel；DI 部分則測試使用 Ioc.Default 取得 ViewModel，以及將其注入至 View 中的方式
 
 <br>
 
