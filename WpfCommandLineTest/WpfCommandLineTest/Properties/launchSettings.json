@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WpfCommandLineTest": {
+      "commandName": "Project",
+      "commandLineArgs": "view1"
+    }
+  }
+}
