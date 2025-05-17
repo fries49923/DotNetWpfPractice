@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Fonts\Kalam\Kalam-Bold.ttf" />
+    <None Remove="Fonts\Kalam\Kalam-Light.ttf" />
+    <None Remove="Fonts\Kalam\Kalam-Regular.ttf" />
+    <None Remove="Fonts\Rajdhani\Rajdhani-Bold.ttf" />
+    <None Remove="Fonts\Rajdhani\Rajdhani-Light.ttf" />
+    <None Remove="Fonts\Rajdhani\Rajdhani-Medium.ttf" />
+    <None Remove="Fonts\Rajdhani\Rajdhani-Regular.ttf" />
+    <None Remove="Fonts\Rajdhani\Rajdhani-SemiBold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Drawing.Common" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\Kalam\Kalam-Bold.ttf" />
+    <Resource Include="Fonts\Kalam\Kalam-Light.ttf" />
+    <Resource Include="Fonts\Kalam\Kalam-Regular.ttf" />
+    <Resource Include="Fonts\Rajdhani\Rajdhani-Bold.ttf" />
+    <Resource Include="Fonts\Rajdhani\Rajdhani-Light.ttf" />
+    <Resource Include="Fonts\Rajdhani\Rajdhani-Medium.ttf" />
+    <Resource Include="Fonts\Rajdhani\Rajdhani-Regular.ttf" />
+    <Resource Include="Fonts\Rajdhani\Rajdhani-SemiBold.ttf" />
+  </ItemGroup>
+
+</Project>

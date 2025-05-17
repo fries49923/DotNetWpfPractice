@@ -1,0 +1,46 @@
+﻿<Window x:Class="WpfFontResourceTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfFontResourceTest"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Width="450"
+        Height="450"
+        WindowStartupLocation="CenterScreen"
+        Loaded="Window_Loaded">
+
+    <Window.Resources>
+
+        <s:String x:Key="SampleText">ABCDEFGHIJK0123456</s:String>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="Text" Value="{StaticResource SampleText}"/>
+
+        </Style>
+
+    </Window.Resources>
+
+    <StackPanel Margin="20">
+
+        <TextBlock/>
+
+        <TextBlock FontFamily="{StaticResource Kalam.300.Light}"/>
+
+        <TextBlock FontFamily="{StaticResource Kalam.400.Regular}"/>
+
+        <TextBlock FontFamily="{StaticResource Kalam.700.Bold}"/>
+
+        <TextBlock FontFamily="{StaticResource Rajdhani.300.Light}"/>
+        
+        <TextBlock FontFamily="{StaticResource Rajdhani.400.Regular}"/>
+
+        <TextBlock FontFamily="{StaticResource Rajdhani.700.Bold}"/>
+
+    </StackPanel>
+
+</Window>

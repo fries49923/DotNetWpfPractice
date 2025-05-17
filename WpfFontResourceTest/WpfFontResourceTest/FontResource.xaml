@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--100 - Thin（極細）
+        200 - Extra Light / Ultra Light（特細）
+        300 - Light（細）
+        400 - Regular / Normal / Book / Roman（正常）
+        500 - Medium（中等）
+        600 - Semi Bold / Demi Bold（略粗）
+        700 - Bold（粗）
+        800 - Extra Bold / Ultra Bold（特粗）
+        900 - Black / Heavy（極粗）-->
+
+    <FontFamily x:Key="Kalam.300.Light">pack://application:,,,/WpfFontResourceTest;component/Fonts/Kalam/#Kalam Light</FontFamily>
+    <FontFamily x:Key="Kalam.400.Regular">pack://application:,,,/WpfFontResourceTest;component/Fonts/Kalam/#Kalam</FontFamily>
+    <FontFamily x:Key="Kalam.700.Bold">pack://application:,,,/WpfFontResourceTest;component/Fonts/Kalam/#Kalam Bold</FontFamily>
+
+    <FontFamily x:Key="Rajdhani.300.Light">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani Light</FontFamily>
+    <FontFamily x:Key="Rajdhani.400.Regular">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani</FontFamily>
+    <FontFamily x:Key="Rajdhani.500.Medium">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani Medium</FontFamily>
+    <FontFamily x:Key="Rajdhani.600.SemiBold">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani SemiBold</FontFamily>
+    <FontFamily x:Key="Rajdhani.700.Bold">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani Bold</FontFamily>
+
+</ResourceDictionary>
