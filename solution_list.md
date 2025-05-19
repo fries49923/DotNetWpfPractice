@@ -56,6 +56,14 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 
 <br>
 
+## [WpfFontResourceTest](./WpfFontResourceTest)
+
+#FontResource #FontFamily #ttf
+
+測試在 WPF 中使用 TTF 字體檔案，並透過 Resource 字典來管理和使用字體
+
+<br>
+
 ## [WpfKeyBindingTest](./WpfKeyBindingTest)
 
 #KeyBinding #Hot Key #MVVM
@@ -101,6 +109,14 @@ MVVM架構，示範DataBinding使用祖先目標(Ancestor)，通常DataBinding�
 #CommunityToolkit.Mvvm #DI #Ioc #Microsoft.Extensions.DependencyInjection #MVVM #Nuget
 
 測試同時使用 ToolKit.Mvvm 與 DI 套件，其中 Mvvm 部分透過繼承 ObservableObject 與使用對應的 Attribute 來實作 ViewModel；DI 部分則測試使用 Ioc.Default 取得 ViewModel，以及將其注入至 View 中的方式
+
+<br>
+
+## [WpfTriggerAnimeTest](./WpfTriggerAnimeTest)
+
+#Storyboard #EventTrigger #RoutedEvent
+
+測試 WPF 中 EventTrigger 與 Storyboard，例如，透過滑鼠左鍵點擊觸發元件動畫效果
 
 <br>
 
