@@ -15,10 +15,11 @@
     <FontFamily x:Key="Kalam.400.Regular">pack://application:,,,/WpfFontResourceTest;component/Fonts/Kalam/#Kalam</FontFamily>
     <FontFamily x:Key="Kalam.700.Bold">pack://application:,,,/WpfFontResourceTest;component/Fonts/Kalam/#Kalam Bold</FontFamily>
 
-    <FontFamily x:Key="Rajdhani.300.Light">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani Light</FontFamily>
-    <FontFamily x:Key="Rajdhani.400.Regular">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani</FontFamily>
-    <FontFamily x:Key="Rajdhani.500.Medium">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani Medium</FontFamily>
-    <FontFamily x:Key="Rajdhani.600.SemiBold">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani SemiBold</FontFamily>
-    <FontFamily x:Key="Rajdhani.700.Bold">pack://application:,,,/WpfFontResourceTest;component/Fonts/Rajdhani/#Rajdhani Bold</FontFamily>
+    <!--可從專案根目錄開始指定完整路徑-->
+    <FontFamily x:Key="Rajdhani.300.Light">/Fonts/Rajdhani/#Rajdhani Light</FontFamily>
+    <FontFamily x:Key="Rajdhani.400.Regular">/Fonts/Rajdhani/#Rajdhani</FontFamily>
+    <FontFamily x:Key="Rajdhani.500.Medium">/Fonts/Rajdhani/#Rajdhani Medium</FontFamily>
+    <FontFamily x:Key="Rajdhani.600.SemiBold">/Fonts/Rajdhani/#Rajdhani SemiBold</FontFamily>
+    <FontFamily x:Key="Rajdhani.700.Bold">/Fonts/Rajdhani/#Rajdhani Bold</FontFamily>
 
 </ResourceDictionary>
