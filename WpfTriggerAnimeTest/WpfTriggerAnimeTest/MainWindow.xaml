@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfTriggerAnimeTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTriggerAnimeTest"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Width="600"
+        Height="300"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <Rectangle Width="100"
+                   Height="100"
+                   Fill="LightBlue">
+
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform CenterX="50" CenterY="50"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+
+            <Rectangle.Triggers>
+
+                <EventTrigger RoutedEvent="MouseLeftButtonDown">
+                    <BeginStoryboard>
+                        <Storyboard AutoReverse="False"
+                                    FillBehavior="Stop">
+
+                            <!-- 旋轉動畫 -->
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TransformGroup.Children)[0].Angle"
+                                             By="360" Duration="0:0:1"/>
+
+                            <!-- 位移動畫 -->
+                            <!--HACK: 某些設定下(AutoReverse="True")，
+                                      動畫未撥完時，連續點擊會看起來怪怪的-->
+                            <DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TransformGroup.Children)[1].X"
+                                             To="200" Duration="0:0:1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+            </Rectangle.Triggers>
+
+        </Rectangle>
+
+    </Grid>
+
+</Window>
